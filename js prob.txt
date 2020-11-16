@@ -1,0 +1,11 @@
+-> Print the current weather data in console- By city name, By city ID, By lat lang
+
+let request = new XMLHTTPRequest();
+request.open('GET',"https://restcountries.eu/rest/v2/all",true);
+request.send();
+request.onload = function(){
+    let data = JSON.parse(this.response);
+    data.forEach(el => {
+        console.log(el.name, el.capital, el.flag);
+});
+}
